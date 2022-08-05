@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import bookService from "./services/bookService";
-
+import readingImg from "./reading.jpg"
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,8 +45,8 @@ const List = ({ genreValue, bookList }) => {
     return null;
   }
   return (
-    <div className="col-4">
-      <h2>Why not read:</h2>
+    <>
+      <h4>Why not read:</h4>
       <ol>
         {bookList.map((book) => (
           <li key={book.rank}>
@@ -60,7 +60,7 @@ const List = ({ genreValue, bookList }) => {
           </li>
         ))}
       </ol>
-    </div>
+    </>
   );
 };
 function App() {
@@ -93,7 +93,11 @@ function App() {
       <div className="row">
         <div className="col-4">
           <Header />
-          <img src="reading.jpg" alt="" />
+          <div className="row">
+            <div className="col-12">
+              <div className="img--l"></div>
+            </div>
+          </div>
           <label htmlFor="listSelect">Choose your genre:</label>
           <select
             id="listSelect"
@@ -117,7 +121,9 @@ function App() {
             </button>
           </div>
         </div>
+        <div className="col-4">
         <List genreValue={genre} bookList={genreBookList} />
+        </div>
       </div>
       <div className="row">
         <div className="col-12">
