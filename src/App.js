@@ -1,4 +1,3 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import bookService from "./services/bookService";
 
@@ -69,6 +68,7 @@ function App() {
   const [bookLists, setBookLists] = useState([]);
   const [genre, setGenre] = useState("");
   const [genreBookList, setGenreBookList] = useState([]);
+
   useEffect(() => {
     bookService.getList().then((list) => {
       setBookLists(list);
@@ -85,9 +85,9 @@ function App() {
   };
 
   const handleGenreChange = (event) => {
-    console.log(event.target.value);
     setGenre(event.target.value);
   };
+  
   return (
     <div className="container">
       <Navbar />
