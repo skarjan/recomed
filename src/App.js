@@ -60,7 +60,6 @@ const List = ({ genreValue, bookList }) => {
           </li>
         ))}
       </ol>
-      <em>Data provided by https://api.nytimes.com</em>
     </div>
   );
 };
@@ -87,13 +86,14 @@ function App() {
   const handleGenreChange = (event) => {
     setGenre(event.target.value);
   };
-  
+
   return (
     <div className="container">
       <Navbar />
       <div className="row">
         <div className="col-4">
           <Header />
+          <img src="reading.jpg" alt="" />
           <label htmlFor="listSelect">Choose your genre:</label>
           <select
             id="listSelect"
@@ -118,6 +118,11 @@ function App() {
           </div>
         </div>
         <List genreValue={genre} bookList={genreBookList} />
+      </div>
+      <div className="row">
+        <div className="col-12">
+          <em>Data provided by https://api.nytimes.com</em>
+        </div>
       </div>
     </div>
   );

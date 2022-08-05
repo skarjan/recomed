@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from 'axios';
 
 const baseUrl = "https://api.nytimes.com/svc/books/v3"
